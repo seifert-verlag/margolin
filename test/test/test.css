@@ -1,0 +1,168 @@
+
+/***************************************************************
+ * Main styles
+ **************************************************************/
+/*
+ * Generelle style-Aenderungen
+ */
+body {
+	/*
+	background-image: url("/bilder/hintergrund_taube_unscharf.jpg");
+	background-repeat: no-repeat;
+	*/
+	background-color: #CFDADA;
+}
+
+@font-face {
+	font-family: "Crimson Text"; src: local('Crimson Text'), url( "../fonts/Crimson-Roman.otf" ) format("opentype");
+}
+@font-face{
+	font-family: "Crimson Text"; src: local('Crimson Text'), url( "../fonts/Crimson-Italic.otf" ) format("opentype"); font-style: italic;
+}
+
+.disabled {
+	color: grey;
+}
+.disabled:hover {
+	font-weight: bold;
+}
+
+img.logo {
+	margin-left: -3.5em;
+}
+
+h1 {
+	font-family: "Lobster";
+	font-size: 2.2em;
+	text-align: center;
+}
+
+h2 {
+	font-family: "Lobster";
+	font-size: 1.5em;
+}
+h2.kapitel {
+	text-align: center;
+}
+h2.uebersicht {
+	font-family: "PT Sans Narrow";
+	margin-top: -5px;
+	margin-left: 10px;
+	margin-bottom: 0.2em;
+}
+
+h3 {
+	font-family: "PT Sans Narrow";
+	font-size: 1.2em;
+	line-height: 1.2em;
+	margin-top: 1.7em;
+	margin-bottom: 0.5em;
+}
+h3.kapitelanfang {
+	margin-top: 8.5em;
+}
+
+td.uebersicht {
+	font-family: "PT Sans Narrow";
+	padding-left: 10px;
+}
+
+a:link {
+	text-decoration: none;
+	color: blue !important;
+}
+
+a:hover {
+	font-weight: bold;
+}
+
+a:visited {
+	font-weight: bold;
+	color: navy !important;
+}
+
+div#content {
+	font-family: "Crimson Text", "Palatino Linotype", serif;
+	font-size: 1.5em;
+	line-height: 1.4;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+p {
+	margin: 0; padding: 0;
+}
+
+p:before {
+	content:url("../images/bookmark-nada.png");
+	position: relative;
+	top: 30px;
+	left: -60px;
+	margin-right: -48px;
+}
+
+#lesezeichen {
+	position: relative;
+	top: 30px;
+	left: -60px;
+	margin-right: -48px;
+}
+
+div.presents {
+	display: block;
+	font-size: 0.5em;
+	font-family: 'PT Sans Narrow';
+}
+div.titel {
+	line-height: 1em;
+	padding-top: 0.2em;
+	padding-bottom: 0.4em;
+}
+
+img#bookmark-hover {
+	position: relative;
+	top: 30px;
+	left: -60px;
+	margin-right: -48px;
+}
+
+td {
+	vertical-align: top;
+}
+
+.header {
+	font-size: 0.7em;
+}
+
+.video {
+	font-size: 0.7em;
+	font-family: "PT Sans Narrow";
+}
+
+.text {
+	text-align: justify;
+}
+
+.release{
+	font-family: "Crimson Text";
+	font-style: italic;
+	letter-spacing: 5.5px;
+	margin-top: 2em;
+	font-size: 0.5em;
+}
+
+.kapitelzaehler {
+	margin-right: 0.5em;
+}
+
+.kapitelpre {
+	font-family:'PT Sans Narrow';
+	font-size: 0.7em;
+	margin-bottom: 1em;
+	font-variant:small-caps;
+}
+
+.kapitelnr {
+	font-size: 0.8em;
+	margin-top: 0em;
+}
