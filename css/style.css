@@ -464,9 +464,6 @@ footer {
 		margin-bottom: 0.5em;
 		margin-left: -1.2em;
 	}
-	img#case {
-		width: 80%;
-	}
 }
 
 @media only screen and (max-width: 57em) {
@@ -480,6 +477,11 @@ footer {
 		text-align: center;
 		margin-left: auto !important;
 		width: 90% !important;
+	}
+
+	
+	img#case {
+		width: 60%;
 	}
 }
 
