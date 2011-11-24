@@ -16,13 +16,13 @@ $(document).ready(function(){
 	
 	// Navigation zwischen Episoden mit j/k
 	$(document).keypress(function(e) {
-		if (e.which == 106 || e.keyCode == 39) {
+		if (e.which == 106) {
 			if (epID < MAX_ID) {
 				epID += 1;
 			}
 			anchor = "#f" + epID.toString();
 			$(anchor).slideto({highlight: false, slide_duration: 0});
-		} else if (e.which == 107 || e.keyCode == 37) {
+		} else if (e.which == 107) {
 			if (epID > 0) {
 				epID -= 1;
 			}

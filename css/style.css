@@ -246,6 +246,7 @@ h1 {
 
 div.logo {
 	float: left;
+	height: 8em;
 	margin-left: 3.0em;
 	margin-top: 0.5em;
 	margin-right: 0.75em;
@@ -365,7 +366,7 @@ a:visited {
 }
 
 img#case {
-	margin-left: 3.5em;
+	margin-left: -3.5em;
 }
 
 
@@ -461,8 +462,12 @@ footer {
 	}
 	div.logo {
 		float: none;
+		height: auto;
 		margin-bottom: 0.5em;
 		margin-left: -1.2em;
+	}
+	img#case {
+		margin-left: 0em;
 	}
 }
 
