@@ -246,7 +246,6 @@ h1 {
 
 div.logo {
 	float: left;
-	height: 8em;
 	margin-left: 3.0em;
 	margin-top: 0.5em;
 	margin-right: 0.75em;
@@ -267,6 +266,10 @@ div.logo {
 	letter-spacing: 5.5px;
 	margin-top: 2em;
 	font-size: 0.5em;
+}
+.introduction {
+	font-style: italic;
+	font-size: 0.8em;
 }
 
 
@@ -335,6 +338,10 @@ nav {
 	font-size: 0.7em;
 }
 
+img#case {
+	margin-left: 3.5em;
+}
+
 
 h2.kapitel {
 	text-align: center;
@@ -365,11 +372,6 @@ a:visited {
 	color: navy !important;
 }
 
-img#case {
-	margin-left: -3.5em;
-}
-
-
 /*
 p {
 	margin: 0; padding: 0;
@@ -388,18 +390,18 @@ article.p:before {
 }
 
 
-#lesezeichen {
-	position: relative;
-	top: 30px;
-	left: -60px;
-	margin-right: -48px;
+#bookmark {
+	position: absolute;
+	width: 48px;
+	height: auto;
+	display: none;
 }
 
 img#bookmark-hover {
-	position: relative;
-	top: 30px;
-	left: -60px;
-	margin-right: -48px;
+	position: absolute;
+	width: 48px;
+	height: auto;
+	display: none;
 }
 
 footer > p {
@@ -460,14 +462,13 @@ footer {
 		margin: auto !important;
 		width: 90% !important;
 	}
+	nav {
+	}
 	div.logo {
 		float: none;
 		height: auto;
 		margin-bottom: 0.5em;
 		margin-left: -1.2em;
-	}
-	img#case {
-		margin-left: 0em;
 	}
 }
 
@@ -484,7 +485,6 @@ footer {
 		width: 90% !important;
 	}
 
-	
 	img#case {
 		width: 60%;
 	}

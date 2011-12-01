@@ -3,17 +3,19 @@
 */
 
 $(document).ready(function(){
-	var MAX_ID = 3; // Anzahl der Episoden -- das wird dann automatisch vom web-generator gesetzt
+	var MAX_ID = 2; // Anzahl der Episoden -- das wird dann automatisch vom web-generator gesetzt
 	var epID = 0;
 	var parID = 0;
 	var bookmarkID = 0
 	var anchor = "";
 	
 	// Sterne nach jeder Episode
-	$("td.text").each(function(index) {
+	$("article.right").each(function(index) {
 		$(this).append("<pre style='text-align: center'>* * *</pre>");
 	});
-	
+	$("article.right:first pre").remove();
+	$("article.right:last pre").remove();
+
 	// Navigation zwischen Episoden mit j/k
 	$(document).keypress(function(e) {
 		if (e.which == 106) {
@@ -32,33 +34,41 @@ $(document).ready(function(){
 	});
 
 	// Lesezeichen setzen
-	$("p.content").mousedown(function(){
-		parID = parseInt(this.id.substr(1));
-		epID = parseInt($(this).parent().parent().get(0).id.substr(1)); // epID von dem Absatz merken
-		
-		// noch kein Lesezeichen gesetzt hier
+	$("p.content").click(function (e) {
+	    var offset = $(this).offset();
+		parID = this.id;
+
+		// noch kein Lesezeichen bei diesem Absatz
 		if (parID != bookmarkID) {
 			bookmarkID = parID;
-			$("#lesezeichen").remove();
-			$(this).prepend('<img id="lesezeichen" width="48px" src="img/margolin.png" />');
-			$.cookie("margolin", this.id, {expires: 365}); // set cookie for a year
-			$(this).mouseleave();
+			$("#bookmark").css({
+		        left: offset.left-60,
+		        top:  offset.top+35
+		    }).show();
+			$("#bookmark-hover").hide();
+			$.cookie("margolin", bookmarkID, {expires: 365}); // set cookie for a year
+
 		// es existiert hier bereits ein Lesezeichen
-		} else {
+		} else {	
+			$("#bookmark").hide();
 			bookmarkID = 0;
-			$("#lesezeichen").remove();
 			$.cookie("margolin", 0, {expires: 365}); // set cookie for a year
 		}
 	});
 	
 	// Hover-Effekt, damit man merkt, dass man ein Lesezeichen setzen kann
-	$("p.content").hover(function(){
+	$("p.content").hover(function(e) {
+	    var offset = $(this).offset();
+	
 		if (this.id != bookmarkID) {
-			$(this).prepend('<img id="bookmark-hover" width="48px" src="img/margolin-outline.png" />');
+			$("#bookmark-hover").css({
+		        left: offset.left-60,
+		        top:  offset.top+35
+		    }).show();
 		}
 	},
 	function() {
-		$("#bookmark-hover").remove();
+		$("bookmark-hover").hide();
 	});
 
 	// epID resetten, wenn den Link nach ganz oben geklickt wird
@@ -67,5 +77,9 @@ $(document).ready(function(){
 	});
 
 	// und schließlich: Beim erneuten Aufruf Lesezeichen aus Cookie laden
-	$("#" + $.cookie("margolin")).mousedown().slideto({highlight_duration: 'short'});
+	// -- der timeout ist deswegen notwendig, weil sich durch das Laden der Webfonts & Hyphenate
+	// der ganze Zeilenumbruch verschiebt, die Koordinaten aber nicht upgedated werden
+	setTimeout( function() {
+		$("#" + $.cookie("margolin")).click().slideto({highlight_duration: 'short'});
+	}, 1000);
 });
